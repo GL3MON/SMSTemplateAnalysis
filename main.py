@@ -15,7 +15,7 @@ except Exception as e:
 
 STAGE_NAME = "Data Transformation Stage"
 try:
-    logger.info(">>>>>> stage {STAGE_NAME} started <<<<<<")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
     data_transformation = DataTransformationPipeline()
     data_transformation.main()
 except Exception as e:
@@ -24,7 +24,7 @@ except Exception as e:
 
 STAGE_NAME = "Model Train"
 try:
-    logger.info(">>>>>> stage {STAGE_NAME} started <<<<<<")
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
     model_train_pipeline = ModelTrainPipeline()
     model_train_pipeline.main()
 except Exception as e:
