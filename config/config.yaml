@@ -1,0 +1,24 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_url: sms_spam
+  local_data_file: artifacts/data_ingestion
+  raw_data_file: artifacts/data_ingestion/rawdataset.hf
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  raw_data_file: artifacts/data_ingestion/rawdataset.hf
+  transformed_data_file: artifacts/data_transformation/transformed_data.hf
+  tokenizer_name: distilbert-base-uncased
+
+model_train:
+  root_dir: artifacts/model_train
+  transformed_data_file: artifacts/data_transformation/transformed_data.hf
+  model_ckpt: distilbert-base-uncased
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 16
+  num_train_epochs: 2
+  weight_decay: 0.01
+  learning_rate: 0.00002
+  save_stratergy: epoch
